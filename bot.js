@@ -1,18 +1,26 @@
 var HTTPS = require('https');
 var cool = require('cool-ascii-faces');
 var str = "♬ Commands! ♬ ";
+var fall = "Aug 26: First day of classes \nSep 2: Labor Day \nOct 21-22: Fall Break \nNov 27-29: Thanksgiving Break/Holiday \nDec 13: Dead Day xx"
 
 var botID = process.env.BOT_ID;
 
 function respond() {
   var request = JSON.parse(this.req.chunks[0]),
-      someMood = /^~mood/; someCorgi = /^~corgis/; nwqIG = /^~instagram/; commandList = /^~commands/; chooseRA = /^~Which RA?/;
+      someMood = /^~mood/; someCorgi = /^~corgis/; nwqIG = /^~instagram/; commandList = /^~commands/; 
+      chooseRA = /^~Which RA?/; dates = /^~important dates/;
       c1 = 'https://s3.amazonaws.com/cdn-origin-etr.akc.org/wp-content/uploads/2017/11/25201637/day_2_dec_14_085.jpg'; c2 = 'https://en.wikipedia.org/wiki/Welsh_Corgi#/media/File:WelshCorgi.jpeg'
       c3 = 'https://thehappypuppysite.com/wp-content/uploads/2018/10/miniature-corgi-long.jpg';
 
   if(request.text && someMood.test(request.text)) {
     this.res.writeHead(200);
     postMessage(cool());
+    this.res.end();
+  }
+  
+  else if(request.text && dates.test(request.text)) {
+    this.res.writeHead(200);
+    postMessage(fall);
     this.res.end();
   }
   
