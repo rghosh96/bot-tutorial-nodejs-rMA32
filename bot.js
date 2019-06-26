@@ -1,10 +1,6 @@
 var HTTPS = require('https');
 var cool = require('cool-ascii-faces');
-var str = "♬ Commands! ♬ 
-  \n~mood for a surprise! 
-  \n~corgis for a smile :) 
-  \n~instagram for the nwq ig
-  \n~Which RA? for a randomly picked RA!";
+var str = "♬ Commands! ♬ ";
 
 var botID = process.env.BOT_ID;
 
