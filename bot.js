@@ -1,11 +1,14 @@
 var HTTPS = require('https');
 var cool = require('cool-ascii-faces');
+var str = "Commands: ";
+str.bold();
+var res = str + "/mood for a surprise!";
 
 var botID = process.env.BOT_ID;
 
 function respond() {
   var request = JSON.parse(this.req.chunks[0]),
-      someMood = /^\/mood/; someCorgi = /^\/corgis/; nwqIG = /^\/instagram/;
+      someMood = /^\/mood/; someCorgi = /^\/corgis/; nwqIG = /^\/instagram/; commandList = /^\/commands/
       c1 = 'https://s3.amazonaws.com/cdn-origin-etr.akc.org/wp-content/uploads/2017/11/25201637/day_2_dec_14_085.jpg'; c2 = 'https://en.wikipedia.org/wiki/Welsh_Corgi#/media/File:WelshCorgi.jpeg'
       c3 = 'https://thehappypuppysite.com/wp-content/uploads/2018/10/miniature-corgi-long.jpg';
 
@@ -19,6 +22,12 @@ function respond() {
     postMessage("https://www.instagram.com/uarkquad/?hl=en");
     this.res.end();
   } 
+  
+  else if(request.text && commandList.test(request.text)) {
+    this.res.writeHead(200);
+    postMessage(res);
+    this.res.end();
+  }
 
   else if(request.text && someCorgi.test(request.text)) {
     this.res.writeHead(200);
