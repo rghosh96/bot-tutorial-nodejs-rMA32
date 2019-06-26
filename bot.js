@@ -1,7 +1,7 @@
 var HTTPS = require('https');
 var cool = require('cool-ascii-faces');
-var str = "♬ Commands! ♬ \n~mood : surprise! \n~corgis: for a smile :) \n~instagram: NWQ official IG \n~Which RA? : draw for a lucky RA! \n~important dates : list of fall 2019 breaks, holidays, etc";
-var fall = "Aug 26: First day of classes \nSep 2: Labor Day \nOct 21-22: Fall Break \nNov 27-29: Thanksgiving Break/Holiday \nDec 13: Dead Day xx"
+var str = "♬ 𝒸𝑜𝓂𝓂𝒶𝓃𝒹𝓈 ♬ \n~mood : surprise! \n~corgis: for a smile :) \n~instagram: NWQ official IG \n~Which RA? : draw for a lucky RA! \n~important dates : list of fall 2019 breaks, holidays, etc";
+var fall = "☀ 𝓯𝓪𝓵𝓵 2019 ☀ \nAug 26: First day of classes \nSep 2: Labor Day \nOct 21-22: Fall Break \nNov 27-29: Thanksgiving Break/Holiday \nDec 13: Dead Day xx"
 
 var botID = process.env.BOT_ID;
 
