@@ -23,7 +23,7 @@ function respond() {
   
   else if(request.text && commandList.test(request.text)) {
     this.res.writeHead(200);
-    postMessage(res);
+    postMessage(str);
     this.res.end();
   }
 
