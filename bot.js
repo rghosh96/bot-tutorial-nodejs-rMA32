@@ -29,9 +29,10 @@ function respond() {
 
   else if(request.text && someCorgi.test(request.text)) {
     this.res.writeHead(200);
-    if(0.6 >= Math.random() > 0.3)
+    var rand = Math.random();
+    if(0.6 >= rand > 0.3)
       postMessage(c1);
-    else if(Math.random() >0.6)
+    else if(rand >0.6)
       postMessage(c2)
     else
       postMessage(c3);
@@ -80,9 +81,6 @@ function postMessage(response) {
   botReq.end(JSON.stringify(body));
 }
 
-function getRandomInt(min, max) {
-  return Math.floor(Math.random() * (max - min)) + min;
-}
 
 
 exports.respond = respond;
