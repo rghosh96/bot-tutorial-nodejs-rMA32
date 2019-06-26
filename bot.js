@@ -1,12 +1,12 @@
 var HTTPS = require('https');
 var cool = require('cool-ascii-faces');
-var str = "Commands: \n\\mood for a surprise! \n\\corgis for a smile :) \n\\instagram for the nwq ig";
+var str = "Commands: \n~mood for a surprise! \n~corgis for a smile :) \n~instagram for the nwq ig";
 
 var botID = process.env.BOT_ID;
 
 function respond() {
   var request = JSON.parse(this.req.chunks[0]),
-      someMood = /^!mood/; someCorgi = /^\/corgis/; nwqIG = /^\/instagram/; commandList = /^\/commands/
+      someMood = /^~mood/; someCorgi = /^~corgis/; nwqIG = /^~instagram/; commandList = /^~commands/
       c1 = 'https://s3.amazonaws.com/cdn-origin-etr.akc.org/wp-content/uploads/2017/11/25201637/day_2_dec_14_085.jpg'; c2 = 'https://en.wikipedia.org/wiki/Welsh_Corgi#/media/File:WelshCorgi.jpeg'
       c3 = 'https://thehappypuppysite.com/wp-content/uploads/2018/10/miniature-corgi-long.jpg';
 
