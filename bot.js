@@ -78,9 +78,9 @@ function respond() {
 
   else if(request.text && someCorgi.test(request.text)) {
     this.res.writeHead(200);
-    if(Math.random() <= 0.4)
+    if(Math.random() <= 0.3)
       postMessage(c1);
-    else if(0.4 < Math.random() <= .8)
+    else if(0.3 < Math.random() <= .6)
       postMessage(c2)
     else
       postMessage(c3);
