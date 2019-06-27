@@ -1,6 +1,6 @@
 var HTTPS = require('https');
 var cool = require('cool-ascii-faces');
-var str = "♬ ᴄᴏᴍᴍᴀɴᴅs! ♬ \n~duty : view duty calendar \n~mood : surprise! \n~corgis: for a smile :) \n~instagram: NWQ official IG \n~Which RA? : draw for a lucky RA! \n~important dates : list of fall 2019 breaks, holidays, etc";
+var str = "♬ ᴄᴏᴍᴍᴀɴᴅs! ♬ \n~version : see when was last updated \n~duty : view duty calendar \n~mood : surprise! \n~corgis: for a smile :) \n~instagram: NWQ official IG \n~Which RA? : draw for a lucky RA! \n~important dates : list of fall 2019 breaks, holidays, etc";
 var fall = "☀ 𝕗𝕒𝕝𝕝 2019 ☀ \nAug 26: First day of classes \nSep 2: Labor Day \nOct 21-22: Fall Break \nNov 27-29: Thanksgiving Break/Holiday \nDec 13: Dead Day xx"
 
 var botID = process.env.BOT_ID;
@@ -9,12 +9,19 @@ function respond() {
   var request = JSON.parse(this.req.chunks[0]),
       someMood = /^~mood/; someCorgi = /^~corgis/; nwqIG = /^~instagram/; commandList = /^~commands/; 
       chooseRA = /^~Which RA?/; dates = /^~important dates/; calendar = /^~duty/;
+      update = /^~version/;
       c1 = 'https://s3.amazonaws.com/cdn-origin-etr.akc.org/wp-content/uploads/2017/11/25201637/day_2_dec_14_085.jpg'; c2 = 'https://en.wikipedia.org/wiki/Welsh_Corgi#/media/File:WelshCorgi.jpeg'
       c3 = 'https://thehappypuppysite.com/wp-content/uploads/2018/10/miniature-corgi-long.jpg';
 
   if(request.text && someMood.test(request.text)) {
     this.res.writeHead(200);
     postMessage(cool());
+    this.res.end();
+  }
+  
+ else if(request.text && update.test(request.text)) {
+    this.res.writeHead(200);
+    postMessage("✰ version ✰ 6.26.19");
     this.res.end();
   }
   
